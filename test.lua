@@ -5,6 +5,29 @@ module.Load = function(plaga)
 
 	--// CODE (DONT TOUCH!) \\-- 
 
+	print("loading anti-lag..")
+
+	-- Define targets to delete
+	
+	local targets = {
+	    game:GetService("Workspace").Map.Nature,
+	    game:GetService("Workspace").Map.Houses,
+	    game:GetService("Workspace").Map.Buildings,
+	    game:GetService("Workspace").Map.Decoration,
+	    game:GetService("Workspace").Map.Roads,
+	    game:GetService("Workspace").Map.Architecture.Counters,
+	    game:GetService("Workspace").Map.Architecture.Lights
+	}
+	
+	-- Delete each target if it exists
+	for _, obj in ipairs(targets) do
+	    if obj then
+	        obj:Destroy()
+	    end
+	end
+
+	wait(1)
+
 	local RS = game:GetService("ReplicatedStorage")
 	local WS = workspace
 	local Network = RS:WaitForChild("OJFramework").Modules["5 | Network"].Remotes
