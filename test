@@ -1,7 +1,0 @@
-local module = {}
-
-module.Load = function(plaga)
-	print(plaga)
-end
-
-return module
