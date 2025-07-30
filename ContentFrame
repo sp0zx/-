@@ -1,335 +1,328 @@
 local mod = {}
 
 mod.LoadCons = function(par)
+	-- Gui to Lua
+	-- Version: 3.2
 
+	-- Instances:
 
-	local Converted = {
-		["_Cons"] = Instance.new("Frame");
-		["_TheOutput"] = Instance.new("ScrollingFrame");
-		["_UIListLayout"] = Instance.new("UIListLayout");
-		["_ScrollBar1"] = Instance.new("Frame");
-		["_Left"] = Instance.new("ImageButton");
-		["_Arrow"] = Instance.new("Frame");
-		["_Frame"] = Instance.new("Frame");
-		["_Frame1"] = Instance.new("Frame");
-		["_Frame2"] = Instance.new("Frame");
-		["_Frame3"] = Instance.new("Frame");
-		["_Right"] = Instance.new("ImageButton");
-		["_Arrow1"] = Instance.new("Frame");
-		["_Frame4"] = Instance.new("Frame");
-		["_Frame5"] = Instance.new("Frame");
-		["_Frame6"] = Instance.new("Frame");
-		["_Frame7"] = Instance.new("Frame");
-		["_Frame8"] = Instance.new("Frame");
-		["_Frame9"] = Instance.new("Frame");
-		["_Markers"] = Instance.new("Frame");
-		["_ScrollBar"] = Instance.new("Frame");
-		["_Up"] = Instance.new("ImageButton");
-		["_Arrow2"] = Instance.new("Frame");
-		["_Frame10"] = Instance.new("Frame");
-		["_Frame11"] = Instance.new("Frame");
-		["_Frame12"] = Instance.new("Frame");
-		["_Frame13"] = Instance.new("Frame");
-		["_Down"] = Instance.new("ImageButton");
-		["_Arrow3"] = Instance.new("Frame");
-		["_Frame14"] = Instance.new("Frame");
-		["_Frame15"] = Instance.new("Frame");
-		["_Frame16"] = Instance.new("Frame");
-		["_Frame17"] = Instance.new("Frame");
-		["_Frame18"] = Instance.new("Frame");
-		["_Frame19"] = Instance.new("Frame");
-		["_Markers1"] = Instance.new("Frame");
-		["_LocalScript"] = Instance.new("LocalScript");
-	}
+	local Cons = Instance.new("Frame")
+	local TheOutput = Instance.new("ScrollingFrame")
+	local UIListLayout = Instance.new("UIListLayout")
+	local ScrollBar1 = Instance.new("Frame")
+	local Left = Instance.new("ImageButton")
+	local Arrow = Instance.new("Frame")
+	local Frame = Instance.new("Frame")
+	local Frame_2 = Instance.new("Frame")
+	local Frame_3 = Instance.new("Frame")
+	local Frame_4 = Instance.new("Frame")
+	local Right = Instance.new("ImageButton")
+	local Arrow_2 = Instance.new("Frame")
+	local Frame_5 = Instance.new("Frame")
+	local Frame_6 = Instance.new("Frame")
+	local Frame_7 = Instance.new("Frame")
+	local Frame_8 = Instance.new("Frame")
+	local Frame_9 = Instance.new("Frame")
+	local Frame_10 = Instance.new("Frame")
+	local Markers = Instance.new("Frame")
+	local ScrollBar = Instance.new("Frame")
+	local Up = Instance.new("ImageButton")
+	local Arrow_3 = Instance.new("Frame")
+	local Frame_11 = Instance.new("Frame")
+	local Frame_12 = Instance.new("Frame")
+	local Frame_13 = Instance.new("Frame")
+	local Frame_14 = Instance.new("Frame")
+	local Down = Instance.new("ImageButton")
+	local Arrow_4 = Instance.new("Frame")
+	local Frame_15 = Instance.new("Frame")
+	local Frame_16 = Instance.new("Frame")
+	local Frame_17 = Instance.new("Frame")
+	local Frame_18 = Instance.new("Frame")
+	local Frame_19 = Instance.new("Frame")
+	local Frame_20 = Instance.new("Frame")
+	local Markers_2 = Instance.new("Frame")
 
-	-- Properties:
+	--Properties:
 
-	Converted["_Cons"].BackgroundColor3 = Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)
-	Converted["_Cons"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Cons"].BorderSizePixel = 0
-	Converted["_Cons"].Position = UDim2.new(0, 0, 0, 20)
-	Converted["_Cons"].Size = UDim2.new(1, 0, 0.930000007, -20)
-	Converted["_Cons"].Visible = false
-	Converted["_Cons"].Name = "Cons"
-	Converted["_Cons"].Parent = par
+	Cons.Name = "Cons"
+	Cons.Parent = par
+	Cons.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+	Cons.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Cons.BorderSizePixel = 0
+	Cons.Position = UDim2.new(0, 0, 0, 20)
+	Cons.Size = UDim2.new(1, 0, 0.930000007, -20)
+	Cons.Visible = true
 
-	Converted["_TheOutput"].BottomImage = "rbxassetid://0"
-	Converted["_TheOutput"].BottomImageContent = Content
-	Converted["_TheOutput"].CanvasSize = UDim2.new(0, 0, 0, 0)
-	Converted["_TheOutput"].ScrollBarImageColor3 = Color3.fromRGB(84.00000259280205, 84.00000259280205, 84.00000259280205)
-	Converted["_TheOutput"].ScrollBarThickness = 16
-	Converted["_TheOutput"].TopImage = "rbxassetid://0"
-	Converted["_TheOutput"].TopImageContent = Content
-	Converted["_TheOutput"].BackgroundColor3 = Color3.fromRGB(48.00000473856926, 48.00000473856926, 48.00000473856926)
-	Converted["_TheOutput"].BackgroundTransparency = 1
-	Converted["_TheOutput"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_TheOutput"].BorderSizePixel = 0
-	Converted["_TheOutput"].Size = UDim2.new(0, 500, 0, 282)
-	Converted["_TheOutput"].ZIndex = 20
-	Converted["_TheOutput"].Name = "TheOutput"
-	Converted["_TheOutput"].Parent = Converted["_Cons"]
+	TheOutput.Name = "TheOutput"
+	TheOutput.Parent = Cons
+	TheOutput.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+	TheOutput.BackgroundTransparency = 1.000
+	TheOutput.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	TheOutput.BorderSizePixel = 0
+	TheOutput.Size = UDim2.new(0, 500, 0, 282)
+	TheOutput.ZIndex = 20
+	TheOutput.BottomImage = "rbxassetid://0"
+	TheOutput.CanvasSize = UDim2.new(0, 0, 0, 0)
+	TheOutput.ScrollBarThickness = 16
+	TheOutput.TopImage = "rbxassetid://0"
 
-	Converted["_UIListLayout"].SortOrder = Enum.SortOrder.LayoutOrder
-	Converted["_UIListLayout"].Parent = Converted["_TheOutput"]
+	UIListLayout.Parent = TheOutput
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-	Converted["_ScrollBar1"].Active = true
-	Converted["_ScrollBar1"].BackgroundColor3 = Color3.fromRGB(40.00000141561031, 40.00000141561031, 40.00000141561031)
-	Converted["_ScrollBar1"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_ScrollBar1"].BorderSizePixel = 0
-	Converted["_ScrollBar1"].Position = UDim2.new(0, 0, 1, -16)
-	Converted["_ScrollBar1"].Size = UDim2.new(0.967999995, 0, 0, 16)
-	Converted["_ScrollBar1"].Name = "ScrollBar1"
-	Converted["_ScrollBar1"].Parent = Converted["_Cons"]
+	ScrollBar1.Name = "ScrollBar1"
+	ScrollBar1.Parent = Cons
+	ScrollBar1.Active = true
+	ScrollBar1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+	ScrollBar1.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	ScrollBar1.BorderSizePixel = 0
+	ScrollBar1.Position = UDim2.new(0, 0, 1, -16)
+	ScrollBar1.Size = UDim2.new(0.967999995, 0, 0, 16)
 
-	Converted["_Left"].AutoButtonColor = false
-	Converted["_Left"].BackgroundColor3 = Color3.fromRGB(75.00000312924385, 75.00000312924385, 75.00000312924385)
-	Converted["_Left"].BackgroundTransparency = 1
-	Converted["_Left"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Left"].BorderSizePixel = 0
-	Converted["_Left"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Left"].Name = "Left"
-	Converted["_Left"].Parent = Converted["_ScrollBar1"]
+	Left.Name = "Left"
+	Left.Parent = ScrollBar1
+	Left.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+	Left.BackgroundTransparency = 1.000
+	Left.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Left.BorderSizePixel = 0
+	Left.Size = UDim2.new(0, 16, 0, 16)
+	Left.AutoButtonColor = false
 
-	Converted["_Arrow"].BackgroundTransparency = 1
-	Converted["_Arrow"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Arrow"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Arrow"].Name = "Arrow"
-	Converted["_Arrow"].Parent = Converted["_Left"]
+	Arrow.Name = "Arrow"
+	Arrow.Parent = Left
+	Arrow.BackgroundTransparency = 1.000
+	Arrow.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Arrow.Size = UDim2.new(0, 16, 0, 16)
 
-	Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame"].BackgroundTransparency = 0.5
-	Converted["_Frame"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame"].BorderSizePixel = 0
-	Converted["_Frame"].Position = UDim2.new(0, 6, 0, 8)
-	Converted["_Frame"].Size = UDim2.new(0, 1, 0, 1)
-	Converted["_Frame"].Parent = Converted["_Arrow"]
+	Frame.Parent = Arrow
+	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame.BackgroundTransparency = 0.500
+	Frame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame.BorderSizePixel = 0
+	Frame.Position = UDim2.new(0, 6, 0, 8)
+	Frame.Size = UDim2.new(0, 1, 0, 1)
 
-	Converted["_Frame1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame1"].BackgroundTransparency = 0.5
-	Converted["_Frame1"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame1"].BorderSizePixel = 0
-	Converted["_Frame1"].Position = UDim2.new(0, 7, 0, 7)
-	Converted["_Frame1"].Size = UDim2.new(0, 1, 0, 3)
-	Converted["_Frame1"].Parent = Converted["_Arrow"]
+	Frame_2.Parent = Arrow
+	Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_2.BackgroundTransparency = 0.500
+	Frame_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_2.BorderSizePixel = 0
+	Frame_2.Position = UDim2.new(0, 7, 0, 7)
+	Frame_2.Size = UDim2.new(0, 1, 0, 3)
 
-	Converted["_Frame2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame2"].BackgroundTransparency = 0.5
-	Converted["_Frame2"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame2"].BorderSizePixel = 0
-	Converted["_Frame2"].Position = UDim2.new(0, 8, 0, 6)
-	Converted["_Frame2"].Size = UDim2.new(0, 1, 0, 5)
-	Converted["_Frame2"].Parent = Converted["_Arrow"]
+	Frame_3.Parent = Arrow
+	Frame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_3.BackgroundTransparency = 0.500
+	Frame_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_3.BorderSizePixel = 0
+	Frame_3.Position = UDim2.new(0, 8, 0, 6)
+	Frame_3.Size = UDim2.new(0, 1, 0, 5)
 
-	Converted["_Frame3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame3"].BackgroundTransparency = 0.5
-	Converted["_Frame3"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame3"].BorderSizePixel = 0
-	Converted["_Frame3"].Position = UDim2.new(0, 9, 0, 5)
-	Converted["_Frame3"].Size = UDim2.new(0, 1, 0, 7)
-	Converted["_Frame3"].Parent = Converted["_Arrow"]
+	Frame_4.Parent = Arrow
+	Frame_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_4.BackgroundTransparency = 0.500
+	Frame_4.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_4.BorderSizePixel = 0
+	Frame_4.Position = UDim2.new(0, 9, 0, 5)
+	Frame_4.Size = UDim2.new(0, 1, 0, 7)
 
-	Converted["_Right"].AutoButtonColor = false
-	Converted["_Right"].BackgroundColor3 = Color3.fromRGB(75.00000312924385, 75.00000312924385, 75.00000312924385)
-	Converted["_Right"].BackgroundTransparency = 1
-	Converted["_Right"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Right"].BorderSizePixel = 0
-	Converted["_Right"].Position = UDim2.new(1, -16, 0, 0)
-	Converted["_Right"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Right"].Name = "Right"
-	Converted["_Right"].Parent = Converted["_ScrollBar1"]
+	Right.Name = "Right"
+	Right.Parent = ScrollBar1
+	Right.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+	Right.BackgroundTransparency = 1.000
+	Right.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Right.BorderSizePixel = 0
+	Right.Position = UDim2.new(1, -16, 0, 0)
+	Right.Size = UDim2.new(0, 16, 0, 16)
+	Right.AutoButtonColor = false
 
-	Converted["_Arrow1"].BackgroundTransparency = 1
-	Converted["_Arrow1"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Arrow1"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Arrow1"].Name = "Arrow"
-	Converted["_Arrow1"].Parent = Converted["_Right"]
+	Arrow_2.Name = "Arrow"
+	Arrow_2.Parent = Right
+	Arrow_2.BackgroundTransparency = 1.000
+	Arrow_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Arrow_2.Size = UDim2.new(0, 16, 0, 16)
 
-	Converted["_Frame4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame4"].BackgroundTransparency = 0.5
-	Converted["_Frame4"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame4"].BorderSizePixel = 0
-	Converted["_Frame4"].Position = UDim2.new(0, 10, 0, 8)
-	Converted["_Frame4"].Size = UDim2.new(0, 1, 0, 1)
-	Converted["_Frame4"].Parent = Converted["_Arrow1"]
+	Frame_5.Parent = Arrow_2
+	Frame_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_5.BackgroundTransparency = 0.500
+	Frame_5.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_5.BorderSizePixel = 0
+	Frame_5.Position = UDim2.new(0, 10, 0, 8)
+	Frame_5.Size = UDim2.new(0, 1, 0, 1)
 
-	Converted["_Frame5"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame5"].BackgroundTransparency = 0.5
-	Converted["_Frame5"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame5"].BorderSizePixel = 0
-	Converted["_Frame5"].Position = UDim2.new(0, 9, 0, 7)
-	Converted["_Frame5"].Size = UDim2.new(0, 1, 0, 3)
-	Converted["_Frame5"].Parent = Converted["_Arrow1"]
+	Frame_6.Parent = Arrow_2
+	Frame_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_6.BackgroundTransparency = 0.500
+	Frame_6.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_6.BorderSizePixel = 0
+	Frame_6.Position = UDim2.new(0, 9, 0, 7)
+	Frame_6.Size = UDim2.new(0, 1, 0, 3)
 
-	Converted["_Frame6"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame6"].BackgroundTransparency = 0.5
-	Converted["_Frame6"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame6"].BorderSizePixel = 0
-	Converted["_Frame6"].Position = UDim2.new(0, 8, 0, 6)
-	Converted["_Frame6"].Size = UDim2.new(0, 1, 0, 5)
-	Converted["_Frame6"].Parent = Converted["_Arrow1"]
+	Frame_7.Parent = Arrow_2
+	Frame_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_7.BackgroundTransparency = 0.500
+	Frame_7.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_7.BorderSizePixel = 0
+	Frame_7.Position = UDim2.new(0, 8, 0, 6)
+	Frame_7.Size = UDim2.new(0, 1, 0, 5)
 
-	Converted["_Frame7"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame7"].BackgroundTransparency = 0.5
-	Converted["_Frame7"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame7"].BorderSizePixel = 0
-	Converted["_Frame7"].Position = UDim2.new(0, 7, 0, 5)
-	Converted["_Frame7"].Size = UDim2.new(0, 1, 0, 7)
-	Converted["_Frame7"].Parent = Converted["_Arrow1"]
+	Frame_8.Parent = Arrow_2
+	Frame_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_8.BackgroundTransparency = 0.500
+	Frame_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_8.BorderSizePixel = 0
+	Frame_8.Position = UDim2.new(0, 7, 0, 5)
+	Frame_8.Size = UDim2.new(0, 1, 0, 7)
 
-	Converted["_Frame8"].BackgroundTransparency = 1
-	Converted["_Frame8"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame8"].Position = UDim2.new(0, 16, 0, 0)
-	Converted["_Frame8"].Size = UDim2.new(1, -32, 1, 0)
-	Converted["_Frame8"].Parent = Converted["_ScrollBar1"]
+	Frame_9.Parent = ScrollBar1
+	Frame_9.BackgroundTransparency = 1.000
+	Frame_9.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_9.Position = UDim2.new(0, 16, 0, 0)
+	Frame_9.Size = UDim2.new(1, -32, 1, 0)
 
-	Converted["_Frame9"].BackgroundColor3 = Color3.fromRGB(60.00000022351742, 60.00000022351742, 60.00000022351742)
-	Converted["_Frame9"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame9"].BorderSizePixel = 0
-	Converted["_Frame9"].Size = UDim2.new(58, 0, 1, 0)
-	Converted["_Frame9"].Visible = false
-	Converted["_Frame9"].Parent = Converted["_Frame8"]
+	Frame_10.Parent = Frame_9
+	Frame_10.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+	Frame_10.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_10.BorderSizePixel = 0
+	Frame_10.Size = UDim2.new(58, 0, 1, 0)
+	Frame_10.Visible = false
 
-	Converted["_Markers"].BackgroundTransparency = 1
-	Converted["_Markers"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Markers"].Size = UDim2.new(1, 0, 1, 0)
-	Converted["_Markers"].Name = "Markers"
-	Converted["_Markers"].Parent = Converted["_Frame8"]
+	Markers.Name = "Markers"
+	Markers.Parent = Frame_9
+	Markers.BackgroundTransparency = 1.000
+	Markers.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Markers.Size = UDim2.new(1, 0, 1, 0)
 
-	Converted["_ScrollBar"].Active = true
-	Converted["_ScrollBar"].BackgroundColor3 = Color3.fromRGB(40.00000141561031, 40.00000141561031, 40.00000141561031)
-	Converted["_ScrollBar"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_ScrollBar"].BorderSizePixel = 0
-	Converted["_ScrollBar"].Position = UDim2.new(1, -16, 0, 0)
-	Converted["_ScrollBar"].Size = UDim2.new(0, 16, 0.943312645, 0)
-	Converted["_ScrollBar"].Name = "ScrollBar"
-	Converted["_ScrollBar"].Parent = Converted["_Cons"]
+	ScrollBar.Name = "ScrollBar"
+	ScrollBar.Parent = Cons
+	ScrollBar.Active = true
+	ScrollBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+	ScrollBar.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	ScrollBar.BorderSizePixel = 0
+	ScrollBar.Position = UDim2.new(1, -16, 0, 0)
+	ScrollBar.Size = UDim2.new(0, 16, 0.943312645, 0)
 
-	Converted["_Up"].AutoButtonColor = false
-	Converted["_Up"].BackgroundColor3 = Color3.fromRGB(75.00000312924385, 75.00000312924385, 75.00000312924385)
-	Converted["_Up"].BackgroundTransparency = 1
-	Converted["_Up"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Up"].BorderSizePixel = 0
-	Converted["_Up"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Up"].Name = "Up"
-	Converted["_Up"].Parent = Converted["_ScrollBar"]
+	Up.Name = "Up"
+	Up.Parent = ScrollBar
+	Up.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+	Up.BackgroundTransparency = 1.000
+	Up.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Up.BorderSizePixel = 0
+	Up.Size = UDim2.new(0, 16, 0, 16)
+	Up.AutoButtonColor = false
 
-	Converted["_Arrow2"].BackgroundTransparency = 1
-	Converted["_Arrow2"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Arrow2"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Arrow2"].Name = "Arrow"
-	Converted["_Arrow2"].Parent = Converted["_Up"]
+	Arrow_3.Name = "Arrow"
+	Arrow_3.Parent = Up
+	Arrow_3.BackgroundTransparency = 1.000
+	Arrow_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Arrow_3.Size = UDim2.new(0, 16, 0, 16)
 
-	Converted["_Frame10"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame10"].BackgroundTransparency = 0.5
-	Converted["_Frame10"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame10"].BorderSizePixel = 0
-	Converted["_Frame10"].Position = UDim2.new(0, 8, 0, 6)
-	Converted["_Frame10"].Size = UDim2.new(0, 1, 0, 1)
-	Converted["_Frame10"].Parent = Converted["_Arrow2"]
+	Frame_11.Parent = Arrow_3
+	Frame_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_11.BackgroundTransparency = 0.500
+	Frame_11.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_11.BorderSizePixel = 0
+	Frame_11.Position = UDim2.new(0, 8, 0, 6)
+	Frame_11.Size = UDim2.new(0, 1, 0, 1)
 
-	Converted["_Frame11"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame11"].BackgroundTransparency = 0.5
-	Converted["_Frame11"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame11"].BorderSizePixel = 0
-	Converted["_Frame11"].Position = UDim2.new(0, 7, 0, 7)
-	Converted["_Frame11"].Size = UDim2.new(0, 3, 0, 1)
-	Converted["_Frame11"].Parent = Converted["_Arrow2"]
+	Frame_12.Parent = Arrow_3
+	Frame_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_12.BackgroundTransparency = 0.500
+	Frame_12.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_12.BorderSizePixel = 0
+	Frame_12.Position = UDim2.new(0, 7, 0, 7)
+	Frame_12.Size = UDim2.new(0, 3, 0, 1)
 
-	Converted["_Frame12"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame12"].BackgroundTransparency = 0.5
-	Converted["_Frame12"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame12"].BorderSizePixel = 0
-	Converted["_Frame12"].Position = UDim2.new(0, 6, 0, 8)
-	Converted["_Frame12"].Size = UDim2.new(0, 5, 0, 1)
-	Converted["_Frame12"].Parent = Converted["_Arrow2"]
+	Frame_13.Parent = Arrow_3
+	Frame_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_13.BackgroundTransparency = 0.500
+	Frame_13.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_13.BorderSizePixel = 0
+	Frame_13.Position = UDim2.new(0, 6, 0, 8)
+	Frame_13.Size = UDim2.new(0, 5, 0, 1)
 
-	Converted["_Frame13"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame13"].BackgroundTransparency = 0.5
-	Converted["_Frame13"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame13"].BorderSizePixel = 0
-	Converted["_Frame13"].Position = UDim2.new(0, 5, 0, 9)
-	Converted["_Frame13"].Size = UDim2.new(0, 7, 0, 1)
-	Converted["_Frame13"].Parent = Converted["_Arrow2"]
+	Frame_14.Parent = Arrow_3
+	Frame_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_14.BackgroundTransparency = 0.500
+	Frame_14.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_14.BorderSizePixel = 0
+	Frame_14.Position = UDim2.new(0, 5, 0, 9)
+	Frame_14.Size = UDim2.new(0, 7, 0, 1)
 
-	Converted["_Down"].AutoButtonColor = false
-	Converted["_Down"].BackgroundColor3 = Color3.fromRGB(75.00000312924385, 75.00000312924385, 75.00000312924385)
-	Converted["_Down"].BackgroundTransparency = 1
-	Converted["_Down"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Down"].BorderSizePixel = 0
-	Converted["_Down"].Position = UDim2.new(0, 0, 1, -16)
-	Converted["_Down"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Down"].Name = "Down"
-	Converted["_Down"].Parent = Converted["_ScrollBar"]
+	Down.Name = "Down"
+	Down.Parent = ScrollBar
+	Down.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+	Down.BackgroundTransparency = 1.000
+	Down.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Down.BorderSizePixel = 0
+	Down.Position = UDim2.new(0, 0, 1, -16)
+	Down.Size = UDim2.new(0, 16, 0, 16)
+	Down.AutoButtonColor = false
 
-	Converted["_Arrow3"].BackgroundTransparency = 1
-	Converted["_Arrow3"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Arrow3"].Size = UDim2.new(0, 16, 0, 16)
-	Converted["_Arrow3"].Name = "Arrow"
-	Converted["_Arrow3"].Parent = Converted["_Down"]
+	Arrow_4.Name = "Arrow"
+	Arrow_4.Parent = Down
+	Arrow_4.BackgroundTransparency = 1.000
+	Arrow_4.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Arrow_4.Size = UDim2.new(0, 16, 0, 16)
 
-	Converted["_Frame14"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame14"].BackgroundTransparency = 0.5
-	Converted["_Frame14"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame14"].BorderSizePixel = 0
-	Converted["_Frame14"].Position = UDim2.new(0, 8, 0, 10)
-	Converted["_Frame14"].Size = UDim2.new(0, 1, 0, 1)
-	Converted["_Frame14"].Parent = Converted["_Arrow3"]
+	Frame_15.Parent = Arrow_4
+	Frame_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_15.BackgroundTransparency = 0.500
+	Frame_15.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_15.BorderSizePixel = 0
+	Frame_15.Position = UDim2.new(0, 8, 0, 10)
+	Frame_15.Size = UDim2.new(0, 1, 0, 1)
 
-	Converted["_Frame15"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame15"].BackgroundTransparency = 0.5
-	Converted["_Frame15"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame15"].BorderSizePixel = 0
-	Converted["_Frame15"].Position = UDim2.new(0, 7, 0, 9)
-	Converted["_Frame15"].Size = UDim2.new(0, 3, 0, 1)
-	Converted["_Frame15"].Parent = Converted["_Arrow3"]
+	Frame_16.Parent = Arrow_4
+	Frame_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_16.BackgroundTransparency = 0.500
+	Frame_16.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_16.BorderSizePixel = 0
+	Frame_16.Position = UDim2.new(0, 7, 0, 9)
+	Frame_16.Size = UDim2.new(0, 3, 0, 1)
 
-	Converted["_Frame16"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame16"].BackgroundTransparency = 0.5
-	Converted["_Frame16"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame16"].BorderSizePixel = 0
-	Converted["_Frame16"].Position = UDim2.new(0, 6, 0, 8)
-	Converted["_Frame16"].Size = UDim2.new(0, 5, 0, 1)
-	Converted["_Frame16"].Parent = Converted["_Arrow3"]
+	Frame_17.Parent = Arrow_4
+	Frame_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_17.BackgroundTransparency = 0.500
+	Frame_17.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_17.BorderSizePixel = 0
+	Frame_17.Position = UDim2.new(0, 6, 0, 8)
+	Frame_17.Size = UDim2.new(0, 5, 0, 1)
 
-	Converted["_Frame17"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Converted["_Frame17"].BackgroundTransparency = 0.5
-	Converted["_Frame17"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame17"].BorderSizePixel = 0
-	Converted["_Frame17"].Position = UDim2.new(0, 5, 0, 7)
-	Converted["_Frame17"].Size = UDim2.new(0, 7, 0, 1)
-	Converted["_Frame17"].Parent = Converted["_Arrow3"]
+	Frame_18.Parent = Arrow_4
+	Frame_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame_18.BackgroundTransparency = 0.500
+	Frame_18.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_18.BorderSizePixel = 0
+	Frame_18.Position = UDim2.new(0, 5, 0, 7)
+	Frame_18.Size = UDim2.new(0, 7, 0, 1)
 
-	Converted["_Frame18"].BackgroundTransparency = 1
-	Converted["_Frame18"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame18"].Position = UDim2.new(0, 0, 0, 16)
-	Converted["_Frame18"].Size = UDim2.new(1, 0, 1, -32)
-	Converted["_Frame18"].Parent = Converted["_ScrollBar"]
+	Frame_19.Parent = ScrollBar
+	Frame_19.BackgroundTransparency = 1.000
+	Frame_19.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_19.Position = UDim2.new(0, 0, 0, 16)
+	Frame_19.Size = UDim2.new(1, 0, 1, -32)
 
-	Converted["_Frame19"].BackgroundColor3 = Color3.fromRGB(60.00000022351742, 60.00000022351742, 60.00000022351742)
-	Converted["_Frame19"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Frame19"].BorderSizePixel = 0
-	Converted["_Frame19"].Size = UDim2.new(1, 0, 9.5, 0)
-	Converted["_Frame19"].Visible = false
-	Converted["_Frame19"].Parent = Converted["_Frame18"]
+	Frame_20.Parent = Frame_19
+	Frame_20.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+	Frame_20.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Frame_20.BorderSizePixel = 0
+	Frame_20.Size = UDim2.new(1, 0, 9.5, 0)
+	Frame_20.Visible = false
 
-	Converted["_Markers1"].BackgroundTransparency = 1
-	Converted["_Markers1"].BorderColor3 = Color3.fromRGB(27.000002190470695, 42.000001296401024, 53.000004440546036)
-	Converted["_Markers1"].Size = UDim2.new(1, 0, 1, 0)
-	Converted["_Markers1"].Name = "Markers"
-	Converted["_Markers1"].Parent = Converted["_Frame18"]
+	Markers_2.Name = "Markers"
+	Markers_2.Parent = Frame_19
+	Markers_2.BackgroundTransparency = 1.000
+	Markers_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Markers_2.Size = UDim2.new(1, 0, 1, 0)
 
-	-- Fake Module Scripts:
+	-- Scripts:
 
-	local fake_module_scripts = {}
+	local function YBBLVOT_fake_script() -- Cons.LocalScript 
+		local script = Instance.new('LocalScript', Cons)
 
-
-	-- Fake Local Scripts:
-
-	local function IFSOE_fake_script() -- Fake Script: ReplicatedStorage.MainModule.Cons.LocalScript
-
-		local scrollingFrame = Converted["_Cons"].TheOutput
-		local scrollbar = Converted["_Cons"].ScrollBar
-		local scrollbar1 = Converted["_Cons"].ScrollBar1
+		local scrollingFrame = TheOutput
+		local scrollbar = ScrollBar
+		local scrollbar1 = ScrollBar1
 
 		local maxCanvasPosition = Vector2.new(0, 0)
 		local previousMaxCanvasPosition = Vector2.new(0, 0)
@@ -599,11 +592,10 @@ mod.LoadCons = function(par)
 
 		spawn(handleButtons)
 
-		Converted["_Cons"].TheOutput.Size = UDim2.new(1, 0, 0.93, 20)
+		TheOutput.Size = UDim2.new(1, 0, 0.93, 20)
 
 	end
-
-	coroutine.wrap(IFSOE_fake_script)()
+	coroutine.wrap(YBBLVOT_fake_script)()
 end
 
 return mod
