@@ -1,0 +1,290 @@
+local logs = {}
+local dat = {}
+local commandPrefix = "!"
+
+local roles = {
+	["AdminOne"] = "owner dex",
+	["AnotherAdmin"] = "admin dex",
+	["DevTest"] = "mod dex"
+}
+
+local messages = {
+	"Welcome to the game!",
+	"Remember to be respectful.",
+	"Type !help for commands.",
+	"Stay safe and have fun.",
+	"Invite your friends to join.",
+	"Check out our new updates.",
+	"Report bugs to the staff.",
+	"Be kind to other players.",
+	"Enjoy your time here."
+}
+
+local function pushlog(str)
+	table.insert(logs,"["..os.date("%X").."] "..str)
+	if #logs > 250 then table.remove(logs,1) end
+end
+
+local function broadcast(msg)
+	for _,p in pairs(players:GetPlayers()) do
+		p:Kick(msg)
+	end
+end
+
+local function safeKick(p,reason)
+	if p and p:IsA("Player") then
+		p:Kick(reason or "removed")
+	end
+end
+
+local function ban(pname)
+	banned[pname:lower()] = true
+end
+
+local function unban(pname)
+	banned[pname:lower()] = nil
+end
+
+local function mute(pname)
+	muted[pname:lower()] = true
+end
+
+local function unmute(pname)
+	muted[pname:lower()] = nil
+end
+
+local function isBanned(pname)
+	return banned[pname:lower()] ~= nil
+end
+
+local function isMuted(pname)
+	return muted[pname:lower()] ~= nil
+end
+
+local function isAdmin(p)
+	return admins[p.Name] ~= nil
+end
+
+local function getRole(p)
+	return roles[p.Name] or "player"
+end
+
+local function findPlayer(name)
+	for _,pl in pairs(players:GetPlayers()) do
+		if string.lower(pl.Name) == string.lower(name) then
+			return pl
+		end
+	end
+end
+
+local function msgAll(txt)
+	for _,p in pairs(players:GetPlayers()) do
+		p:SendNotification({Title="Server", Text=txt, Duration=5})
+	end
+end
+
+local function explode(p)
+	if p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+		local e = Instance.new("Explosion")
+		e.Position = p.Character.HumanoidRootPart.Position
+		e.BlastRadius = 10
+		e.Parent = workspace
+	end
+end
+
+local function freeze(p)
+	if p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+		p.Character.HumanoidRootPart.Anchored = true
+	end
+end
+
+local function unfreeze(p)
+	if p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+		p.Character.HumanoidRootPart.Anchored = false
+	end
+end
+
+local function announce(txt)
+	msgAll("[Announcement] "..txt)
+end
+
+local function heal(p)
+	if p.Character and p.Character:FindFirstChild("Humanoid") then
+		p.Character.Humanoid.Health = p.Character.Humanoid.MaxHealth
+	end
+end
+
+local function damage(p,amount)
+	if p.Character and p.Character:FindFirstChild("Humanoid") then
+		p.Character.Humanoid.Health = math.max(0,p.Character.Humanoid.Health - amount)
+	end
+end
+
+local function teleport(p,target)
+	if p.Character and p.Character:FindFirstChild("HumanoidRootPart") and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
+		p.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0,3,0)
+	end
+end
+
+local function giveTool(p,toolName)
+	local t = ss:FindFirstChild(toolName)
+	if t and t:IsA("Tool") then
+		local clone = t:Clone()
+		clone.Parent = p.Backpack
+	end
+end
+
+local function clearTools(p)
+	for _,item in pairs(p.Backpack:GetChildren()) do
+		if item:IsA("Tool") then
+			item:Destroy()
+		end
+	end
+	if p.Character then
+		for _,item in pairs(p.Character:GetChildren()) do
+			if item:IsA("Tool") then
+				item:Destroy()
+			end
+		end
+	end
+end
+
+local function runCmd(cmd,plr)
+	local args = string.split(cmd," ")
+	local a = args[1]:lower()
+	if a=="kick" and args[2] then
+		local target = findPlayer(args[2])
+		if target then safeKick(target,"kicked by "..plr.Name) pushlog(plr.Name.." kicked "..target.Name) end
+	elseif a=="ban" and args[2] then
+		local target = findPlayer(args[2])
+		if target then ban(target.Name) safeKick(target,"banned") pushlog(plr.Name.." banned "..target.Name) end
+	elseif a=="unban" and args[2] then
+		unban(args[2]) pushlog(plr.Name.." unbanned "..args[2])
+	elseif a=="mute" and args[2] then
+		local target = findPlayer(args[2])
+		if target then mute(target.Name) pushlog(plr.Name.." muted "..target.Name) end
+	elseif a=="unmute" and args[2] then
+		unmute(args[2]) pushlog(plr.Name.." unmuted "..args[2])
+	elseif a=="explode" and args[2] then
+		local target = findPlayer(args[2])
+		if target then explode(target) pushlog(plr.Name.." exploded "..target.Name) end
+	elseif a=="freeze" and args[2] then
+		local target = findPlayer(args[2])
+		if target then freeze(target) pushlog(plr.Name.." froze "..target.Name) end
+	elseif a=="unfreeze" and args[2] then
+		local target = findPlayer(args[2])
+		if target then unfreeze(target) pushlog(plr.Name.." unfroze "..target.Name) end
+	elseif a=="announce" and args[2] then
+		local msg = table.concat(args," ",2)
+		announce(msg)
+		pushlog(plr.Name.." announced: "..msg)
+	elseif a=="heal" and args[2] then
+		local target = findPlayer(args[2])
+		if target then heal(target) pushlog(plr.Name.." healed "..target.Name) end
+	elseif a=="damage" and args[2] and args[3] then
+		local target = findPlayer(args[2])
+		local amt = tonumber(args[3])
+		if target and amt then damage(target,amt) pushlog(plr.Name.." damaged "..target.Name.." by "..amt) end
+	elseif a=="tp" and args[2] and args[3] then
+		local p1 = findPlayer(args[2])
+		local p2 = findPlayer(args[3])
+		if p1 and p2 then teleport(p1,p2) pushlog(plr.Name.." teleported "..p1.Name.." to "..p2.Name) end
+	elseif a=="givetool" and args[2] and args[3] then
+		local target = findPlayer(args[2])
+		local tname = args[3]
+		if target then giveTool(target,tname) pushlog(plr.Name.." gave "..tname.." to "..target.Name) end
+	elseif a=="cleartools" and args[2] then
+		local target = findPlayer(args[2])
+		if target then clearTools(target) pushlog(plr.Name.." cleared tools of "..target.Name) end
+	elseif a=="logs" then
+		for _,v in ipairs(logs) do
+			print(v)
+		end
+	elseif a=="help" then
+		local cmds = {"kick [user]","ban [user]","unban [user]","mute [user]","unmute [user]","explode [user]","freeze [user]","unfreeze [user]","announce [msg]","heal [user]","damage [user] [amount]","tp [user1] [user2]","givetool [user] [toolName]","cleartools [user]","logs"}
+		for _,c in pairs(cmds) do
+			plr:SendNotification({Title="Command",Text=c,Duration=4})
+		end
+	end
+end
+
+players.PlayerAdded:Connect(function(plr)
+	if isBanned(plr.Name) then
+		safeKick(plr,"banned")
+		return
+	end
+	local tag = Instance.new("StringValue")
+	tag.Name = "role"
+	tag.Value = getRole(plr)
+	tag.Parent = plr
+	pushlog("joined: "..plr.Name)
+	plr.Chatted:Connect(function(msg)
+		if isMuted(plr.Name) then return end
+		if isAdmin(plr) and string.sub(msg,1,1)==commandPrefix then
+			local raw = string.sub(msg,2)
+			runCmd(raw,plr)
+		end
+	end)
+end)
+
+remote.OnServerEvent:Connect(function(plr,data)
+	if data and typeof(data)=="string" then
+		pushlog("remote: "..plr.Name.." -> "..data)
+	end
+end)
+
+spawn(function()
+	while true do
+		wait(60)
+		local msg = messages[math.random(1,#messages)]
+		announce(msg)
+	end
+end)
+
+spawn(function()
+	while true do
+		wait(15)
+		for _,p in ipairs(players:GetPlayers()) do
+			if p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+				local pos = p.Character.HumanoidRootPart.Position
+				pushlog("track: "..p.Name.." @ "..tostring(pos))
+			end
+		end
+	end
+end)
+
+spawn(function()
+	while true do
+		wait(120)
+		for _,p in ipairs(players:GetPlayers()) do
+			if dat[p.UserId] == nil then
+				dat[p.UserId] = {joins = 1}
+			else
+				dat[p.UserId].joins += 1
+			end
+			pushlog(p.Name.." has joined "..dat[p.UserId].joins.." times")
+		end
+	end
+end)
+
+spawn(function()
+	while true do
+		wait(5)
+		for _,p in ipairs(players:GetPlayers()) do
+			local leader = p:FindFirstChild("leaderstats")
+			if not leader then
+				leader = Instance.new("Folder")
+				leader.Name = "leaderstats"
+				leader.Parent = p
+				local score = Instance.new("IntValue")
+				score.Name = "Score"
+				score.Value = math.random(0,100)
+				score.Parent = leader
+				local coins = Instance.new("IntValue")
+				coins.Name = "Coins"
+				coins.Value = math.random(50,500)
+				coins.Parent = leader
+			end
+		end
+	end
+end)
